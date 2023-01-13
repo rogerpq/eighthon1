@@ -204,6 +204,8 @@ def gen_user(choice):
             random.shuffle(f)
             username = ''.join(f)
             username = username+'bot'
+        else:
+            pass
     return username
 
 
