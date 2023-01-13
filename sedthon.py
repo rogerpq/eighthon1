@@ -220,12 +220,12 @@ async def _(event):
     end = datetime.datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(f'''
-**☆ تـوب سـورس
-☆ الاصدار : 1.2
-☆ البنك : `{ms}`
-☆ التاريخ : `{m9zpi}`
-☆ الايدي : `{event.sender_id}`
-☆ تـوب سـورس : @m_v_x**
+**☆ Welcome to Source TEPTHON
+☆ Version : 1.5
+☆ Ping : `{ms}`
+☆ Date : `{m9zpi}`
+☆ ID : `{event.sender_id}`
+☆ Source TEPTHON : @TEPTHON**
 ''')
 
 
@@ -287,7 +287,7 @@ ownerhson_id = 5307018300
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerhson_id :
-        order = await event.reply('** Hi MY Developer - @B_8_1 **')
+        order = await event.reply('** اه كسي يوجعني تع نيجني - @B_8_1 **')
 
 
 	
