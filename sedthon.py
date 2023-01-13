@@ -15,10 +15,7 @@ import logging
 import base64
 import datetime
 from payment import *
-from calcu import *
 from help import *
-from waad import *
-from trans import *
 from config import *
 from t06bot import *
 from checktele import *
