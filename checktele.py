@@ -234,7 +234,7 @@ async def _(event):
 # كلايم عدد نوع قناة
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.كلايم (.*)"))
+@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد (.*)"))
 async def _(event):
     if ispay2[0] == "yes":
         isclaim.clear()
@@ -245,13 +245,13 @@ async def _(event):
         trys = 0
         await event.edit(f"حسناً سأفحص نوع `{choice}` من اليوزرات على `{ch}` , بعدد `{msg[0]}` من المحاولات !")
 
-        @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الكلايم"))
+        @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الصيد"))
         async def _(event):
             if ispay2[0] == "yes":
                 if "on" in isclaim:
-                    await event.edit(f"الكلايم وصل لـ({trys}) من المحاولات")
+                    await event.edit(f"الصيد وصل لـ({trys}) من المحاولات")
                 elif "off" in isclaim:
-                    await event.edit("لايوجد كلايم شغال !")
+                    await event.edit("لايوجد صيد شغال !")
                 else:
                     await event.edit("خطأ")
             else:
@@ -273,7 +273,7 @@ async def _(event):
                     await sedthon(functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username))
                     await event.client.send_message(event.chat_id, f'''**
-⌯ 𝘛𝘖 𝘐𝘕𝘚𝘛𝘈𝘓𝘓 𝘛𝘏𝘌 𝘚𝘖𝘜𝘙𝘊𝘌 ↣ ( @N1111V )
+⌯ 𝘛𝘖 𝘐𝘕𝘚𝘛𝘈𝘓𝘓 𝘛𝘏𝘌 𝘚𝘖𝘜𝘙𝘊𝘌 ↣ ( @N1111V , @S8Y8S )
 -- -- -- -- -- -- -- -- -- -- -- -- --
 - ⎱UserName: ↣ (@{username}❳! **
     ''')
