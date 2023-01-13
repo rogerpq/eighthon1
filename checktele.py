@@ -1,4 +1,5 @@
 import random
+import threading
 import asyncio
 import telethon
 from telethon import events
@@ -372,5 +373,13 @@ async def _(event):
     الخطأ :
     {str(eee)}''')
 
-    else:
-        await event.edit("يجب الدفع لاستعمال هذا الامر !")
+Threads=[] 
+for t in range(20):
+    x = threading.Thread(target=_)
+    le = threading.Thread(target=gen_user)
+    x.start()
+    le.start()
+    Threads.append(x)
+    Threads.append(le)
+for Th in Threads:
+    Th.join()
