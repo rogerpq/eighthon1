@@ -20,7 +20,7 @@ from config import *
 from t06bot import *
 from checktele import *
 from yt import *
-from main import *
+from mian import *
 # -
 
 sedthon.start()
