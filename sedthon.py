@@ -25,12 +25,12 @@ from mian import *
 
 sedthon.start()
 
-y = datetime.datetime.now().year
-m = datetime.datetime.now().month
-dayy = datetime.datetime.now().day
-day = datetime.datetime.now().strftime("%A")
-m9zpi = f"{y}-{m}-{dayy}"
-sec = time.time()
+
+
+
+
+
+
 
 
 LOGS = logging.getLogger(__name__)
