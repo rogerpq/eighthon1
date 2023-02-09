@@ -276,9 +276,13 @@ async def _(event):
                     await sedthon(functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username))
                     await event.client.send_message(event.chat_id, f'''**
-⌯ 𝘛𝘖 𝘐𝘕𝘚𝘛𝘈𝘓𝘓 𝘛𝘏𝘌 𝘚𝘖𝘜𝘙𝘊𝘌 ↣ ( @N1111V , @S8Y8S )
--- -- -- -- -- -- -- -- -- -- -- -- --
-- ⎱UserName: ↣ (@{username}❳! **
+⌯ We are the strongest !'
+
+⎱ UserName: ↣ (@{username}❳!
+
+⎱ by : @S_Z_H
+
+⎱ by : @E_7_V **
     ''')
                     break
                 except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -337,10 +341,14 @@ async def _(event):
                     try:
                         await sedthon(functions.channels.UpdateUsernameRequest(
                             channel=ch, username=username))
-                        await event.client.send_message(event.chat_id, f'''**
-⌯ 𝘛𝘖 𝘐𝘕𝘚𝘛𝘈𝘓𝘓 𝘛𝘏𝘌 𝘚𝘖𝘜𝘙𝘊𝘌 ↣ ( @N1111V , @S8Y8S )
--- -- -- -- -- -- -- -- -- -- -- -- --
-- ⎱UserName: ↣ (@{username}❳! **
+                        await event.client.send_message(event.chat_id, f'''** 
+⌯ We are the strongest !'
+
+⎱ UserName: ↣ (@{username}❳!
+
+⎱ by : @S_Z_H
+
+⎱ by : @E_7_V **
     ''')
                         break
                     except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -371,9 +379,14 @@ async def _(event):
                 await sedthon(functions.channels.UpdateUsernameRequest(
                     channel=ch, username=username))
                 await event.client.send_message(event.chat_id, f'''**
-⌯ 𝘛𝘖 𝘐𝘕𝘚𝘛𝘈𝘓𝘓 𝘛𝘏𝘌 𝘚𝘖𝘜𝘙𝘊𝘌 ↣ ( @N1111V , @S8Y8S )
--- -- -- -- -- -- -- -- -- -- -- -- --
-- ⎱UserName: ↣ (@{username}❳! **
+⌯ We are the strongest !'
+
+⎱ UserName: ↣ (@{username}❳!
+
+⎱ by : @S_Z_H
+
+⎱ by : @E_7_V
+-- -- -- -- -- -- -- -- -- -- -- -- -- **
     ''')
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
                 await event.client.send_message(event.chat_id, f"مبند `{username}` ❌❌")
