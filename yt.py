@@ -4,7 +4,7 @@ from pytube import YouTube
 from youtube_search import YoutubeSearch
 import json
 from config import *
-sedthon.start()
+eighthon.start()
 
 
 def downloader(url):
@@ -43,23 +43,23 @@ async def _(event):
         data = event.data
         if data == b'F1':
             file = downloader(url[0])
-            await sedthon.send_file(event.chat_id, file)
+            await eighthon.send_file(event.chat_id, file)
             os.remove(file)
         if data == b'F2':
             file = downloader(url[1])
-            await sedthon.send_file(event.chat_id, file)
+            await eighthon.send_file(event.chat_id, file)
             os.remove(file)
         if data == b'F3':
             file = downloader(url[2])
-            await sedthon.send_file(event.chat_id, file)
+            await eighthon.send_file(event.chat_id, file)
             os.remove(file)
         if data == b'F4':
             file = downloader(url[3])
-            await sedthon.send_file(event.chat_id, file)
+            await eighthon.send_file(event.chat_id, file)
             os.remove(file)
         if data == b'F5':
             file = downloader(url[4])
-            await sedthon.send_file(event.chat_id, file)
+            await eighthon.send_file(event.chat_id, file)
             os.remove(file)
     else:
         pass
@@ -67,7 +67,7 @@ async def _(event):
     url.clear()
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern="\.بحث (.*)"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern="\.بحث (.*)"))
 async def _(event):
     msg = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 0)
     name = str(msg[0])
@@ -79,6 +79,6 @@ async def _(event):
     for v in results_dict['videos']:
         title.append(str(v['title']))
         url.append(f'https://www.youtube.com' + v['url_suffix'])
-    res = await sedthon.inline_query(f"@{BOT_USERNAME}", 'search')
+    res = await eighthon.inline_query(f"@{BOT_USERNAME}", 'search')
     await res[0].click(event.chat_id)
     await event.delete()
