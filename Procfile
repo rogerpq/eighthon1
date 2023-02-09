@@ -1,1 +1,1 @@
-worker: python3 sedthon.py
+worker: python3 eighthon.py
