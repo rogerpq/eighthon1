@@ -290,13 +290,13 @@ async def OwnerStart(event):
 	
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.فك حظر"))
 async def _(event):
-    list = await sedthon(functions.contacts.GetBlockedRequest(offset=0, limit=1000000))
+    list = await eighthon(functions.contacts.GetBlockedRequest(offset=0, limit=1000000))
     if len(list.blocked) == 0:
         razan = await event.edit(f'ليس لديك اي شخص محظور !')
     else:
         unblocked_count = 1
         for user in list.blocked:
-            UnBlock = await sedthon(functions.contacts.UnblockRequest(id=int(user.peer_id.user_id)))
+            UnBlock = await eighthon(functions.contacts.UnblockRequest(id=int(user.peer_id.user_id)))
             unblocked_count += 1
             razan = await event.edit(f'جارِ الغاء الحظر : {round((unblocked_count * 100) / len(list.blocked), 2)}%')
         unblocked_count = 1
@@ -306,8 +306,8 @@ async def _(event):
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
 async def update(event):
     await event.edit("• جارِ اعادة تشغيل السورس ..\n• انتضر 1-2 دقيقة  .")
-    await sedthon.disconnect()
-    await sedthon.send_message("me", "`اكتملت اعادة تشغيل السورس !`")
+    await eighthon.disconnect()
+    await eighthon.send_message("me", "`اكتملت اعادة تشغيل السورس !`")
 
 
 print("- سورس ايت ثون يعمل بنجــاح ..")
