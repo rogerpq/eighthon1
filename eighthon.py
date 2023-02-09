@@ -76,7 +76,7 @@ async def _(event):
     )
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.السورس"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.السورس"))
 async def a(event):
     await event.edit("جارٍ")
     animation = [
@@ -311,4 +311,4 @@ async def update(event):
 
 
 print("- سورس ايت ثون يعمل بنجــاح ..")
-sedthon.run_until_disconnected()
+eighthon.run_until_disconnected()
