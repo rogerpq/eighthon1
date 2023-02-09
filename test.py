@@ -9,7 +9,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import Column, PickleType, UnicodeText, distinct, func
 BASE = declarative_base()
 SESSION = start()
-engine = create_engine("sed.db")
+engine = create_engine("eigth.db")
 BASE.metadata.bind = engine
 BASE.metadata.create_all(engine)
 
