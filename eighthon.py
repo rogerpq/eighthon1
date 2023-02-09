@@ -220,7 +220,6 @@ async def _(event):
 **☆ Welcome to Source Eighthon
 ☆ Version : 1.5
 ☆ Ping : `{ms}`
-☆ Date : `{m9zpi}`
 ☆ ID : `{event.sender_id}`
 ☆ Source Eighthon : @Eighthon**
 ''')
