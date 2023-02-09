@@ -10,12 +10,12 @@
     ],
     "website": "https://github.com/perdark/per-sed",
     "env": {
-        "APP_ID": {
+        "API_ID": {
             "description": "ايبي ايدي",
             "value": "",
             "required": true
         },
-        "APP_HASH": {
+        "API_HASH": {
             "description": "ايبي هاش",
             "value": "",
             "required": true
