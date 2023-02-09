@@ -89,7 +89,7 @@ logging.basicConfig(
 LOGS = logging.getLogger(__name__)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.تحديث"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تحديث"))
 async def _(event):
 
     sandy = await event.edit(
@@ -108,7 +108,7 @@ async def _(event):
     except Exception as e:
         LOGS.error(e)
     try:
-        await sedthon.disconnect()
+        await eighthon.disconnect()
     except CancelledError:
         pass
     except Exception as e:
