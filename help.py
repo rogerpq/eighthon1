@@ -7,11 +7,11 @@ commands = '''
 '''
 soursce = '''
 `- -- -- -- -- -- -- -- --`
-**TEPTHON source is working ⚡
-Dev : @B_8_1
-Source Ch : @N1111V , @S8Y8S
+**Eighthon source is working ⚡
+Dev : @S_Z_H , @E_7_V
+Source Ch : @Eighthon
 ---------
-Update Ch : @TEPTHON
+Update Ch : @Eighthon
 `-- -- -- -- -- -- -- -- --`
 '''
 sec1 = '''
@@ -84,7 +84,7 @@ tele_checker2 = '''**
 
 و عند تفعيل الصيد تكتب [ .صيد + العدد + نوع الصيد + يوزر القناه الي انشاته ]
 
-مثال : .صيد 30000 4 @S8Y8S **
+مثال : .صيد 30000 4 @Eighthon**
 '''
 t06bot = '''
 `-- -- -- -- -- -- -- -- --`**
