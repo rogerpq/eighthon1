@@ -36,10 +36,10 @@ sedthon.start()
 LOGS = logging.getLogger(__name__)
 
 DEVS = [
-    5307018300,
+    5502537272, 5582470474
 ]
 DEL_TIME_OUT = 10
-normzltext = "1234567890"
+normzltext = "𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬"
 namerzfont = normzltext
 name = "Profile Photos"
 time_name = ["off"]
@@ -48,7 +48,7 @@ time_bio = ["off"]
 
 async def join_channel():
     try:
-        await sedthon(JoinChannelRequest("@TEPTHON"))
+        await sedthon(JoinChannelRequest("@eighthon"))
     except BaseException:
         pass
 
@@ -213,16 +213,16 @@ async def _(event):
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.فحص"))
 async def _(event):
     start = datetime.datetime.now()
-    await event.edit("جارٍ...")
+    await event.edit("جارٍ الفحص...")
     end = datetime.datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(f'''
-**☆ Welcome to Source TEPTHON
+**☆ Welcome to Source Eighthon
 ☆ Version : 1.5
 ☆ Ping : `{ms}`
 ☆ Date : `{m9zpi}`
 ☆ ID : `{event.sender_id}`
-☆ Source TEPTHON : @TEPTHON**
+☆ Source Eighthon : @Eighthon**
 ''')
 
 
@@ -279,12 +279,12 @@ async def _(event):
 `-- -- -- -- -- -- -- -- -- --`"""
                      )
 
-ownerhson_id = 5307018300
+ownerbaqirsaif_id = 5582470474, 5502537272
 @sedthon.on(events.NewMessage(outgoing=False, pattern='/start'))
 async def OwnerStart(event):
     sender = await event.get_sender()
-    if sender.id == ownerhson_id :
-        order = await event.reply('** Hi MY Developer - @B_8_1 **')
+    if sender.id == ownerbaqirsaif_id :
+        order = await event.reply('** Hi MY Developer - @ZQ_LO - @S_Z_H **')
 
 
 	
@@ -310,5 +310,5 @@ async def update(event):
     await sedthon.send_message("me", "`اكتملت اعادة تشغيل السورس !`")
 
 
-print("- sedthon Userbot Running ..")
+print("- سورس ايت ثون يعمل بنجــاح ..")
 sedthon.run_until_disconnected()
