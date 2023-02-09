@@ -23,7 +23,7 @@ from yt import *
 
 # -
 
-sedthon.start()
+eighthon.start()
 
 
 
@@ -48,24 +48,24 @@ time_bio = ["off"]
 
 async def join_channel():
     try:
-        await sedthon(JoinChannelRequest("@eighthon"))
+        await eighthon(JoinChannelRequest("@eighthon"))
     except BaseException:
         pass
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.تفليش"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تفليش"))
 async def _(event):
     await event.delete()
     messagelocation = event.to_id
     async for user in sedthon.iter_participants(messagelocation):
         user_id = user.id
         try:
-            await sedthon.edit_permissions(messagelocation, user_id, view_messages=False)
+            await eighthon.edit_permissions(messagelocation, user_id, view_messages=False)
         except:
             pass
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.اكس او"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اكس او"))
 async def _(event):
     bot = 'inlinegamesbot'
     xo = await sedthon.inline_query(bot, "")
@@ -98,32 +98,32 @@ async def a(event):
 
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.هممم"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.هممم"))
 async def _(event):
     if not event.is_reply:
         return await event.edit(
             "يستعمل الامر بالرد على الصورتهة او الفيديو !"
         )
-    rr9r7 = await event.get_reply_message()
+    zq_lo = await event.get_reply_message()
     await event.delete()
-    pic = await rr9r7.download_media()
-    await sedthon.send_file(
+    pic = await zq_lo.download_media()
+    await eighthon.send_file(
         "me", pic, caption=f"تم حفظ الصورة او الفيديو الذاتي هنا : "
     )
 
 
-@sedthon.on(events.NewMessage(pattern=r"\.ادمن", outgoing=True))
+@eighthon.on(events.NewMessage(pattern=r"\.ادمن", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
-    result = await sedthon(functions.channels.GetAdminedPublicChannelsRequest())
+    result = await eighthon(functions.channels.GetAdminedPublicChannelsRequest())
     output_str = "انت ادمن في : \n"
     for channel_obj in result.chats:
         output_str += f"- {channel_obj.title} @{channel_obj.username} \n"
     await event.edit(output_str)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.سي (.*)"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.سي (.*)"))
 async def spammer(event):
     reply = await event.get_reply_message()
     input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -162,7 +162,7 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
             pass
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.اشتراكاتي"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اشتراكاتي"))
 async def _(event):
     if event.fwd_from:
         return
@@ -200,17 +200,17 @@ async def _(event):
 `""".format(ms, u, g, c, bc, b))
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر"))
 async def _(event):
     await event.edit(commands)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.السورس"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.السورس"))
 async def _(event):
     await event.edit(soursce)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.فحص"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.فحص"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit("جارٍ الفحص...")
@@ -226,37 +226,37 @@ async def _(event):
 ''')
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.م1"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.م1"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec1)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.م2"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.م2"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec2)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.م3"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.م3"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec3)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.م4"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.م4"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec4)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.م5"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.م5"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec5)
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر الخاصة"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر الخاصة"))
 async def _(event):
     if ispay2[0] == 'yes':
         await event.edit(spc2)
@@ -266,7 +266,7 @@ async def _(event):
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.البنك"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.البنك"))
 async def _(event):
     start = datetime.datetime.now()
     await event.edit("جارٍ...")
@@ -280,7 +280,7 @@ async def _(event):
                      )
 
 ownerbaqirsaif_id = 5582470474, 5502537272
-@sedthon.on(events.NewMessage(outgoing=False, pattern='/start'))
+eighthon.on(events.NewMessage(outgoing=False, pattern='/start'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerbaqirsaif_id :
@@ -288,7 +288,7 @@ async def OwnerStart(event):
 
 
 	
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.فك حظر"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.فك حظر"))
 async def _(event):
     list = await sedthon(functions.contacts.GetBlockedRequest(offset=0, limit=1000000))
     if len(list.blocked) == 0:
@@ -303,7 +303,7 @@ async def _(event):
         razan = await event.edit(f'تم الغاء حظر : {len(list.blocked)}')
 
 
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
 async def update(event):
     await event.edit("• جارِ اعادة تشغيل السورس ..\n• انتضر 1-2 دقيقة  .")
     await sedthon.disconnect()
