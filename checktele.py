@@ -273,7 +273,7 @@ async def _(event):
             if "Available" in isav:
                 await asyncio.sleep(1)
                 try:
-                    await sedthon(functions.channels.UpdateUsernameRequest(
+                    await eighthon(functions.channels.UpdateUsernameRequest(
                         channel=ch, username=username))
                     await event.client.send_message(event.chat_id, f'''**
 ⌯ We are the strongest !'
