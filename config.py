@@ -1,14 +1,14 @@
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 import os
-APP_ID = os.environ.get("API_ID")
-APP_HASH = os.environ.get("API_HASH")
+API_ID = os.environ.get("API_ID")
+API_HASH = os.environ.get("API_HASH")
 BOT_USERNAME = os.environ.get("BOT_USERNAME")
 session = os.environ.get("TERMUX")
 SESSION = os.environ.get("TERMUX")
 token = os.environ.get("TOKEN")
-eighthon = TelegramClient(StringSession(session), APP_ID, APP_HASH)
-bot = TelegramClient("bot", APP_ID, APP_HASH).start(bot_token=token)
+eighthon = TelegramClient(StringSession(session), API_ID, API_HASH)
+bot = TelegramClient("bot", API_ID, API_HASH).start(bot_token=token)
 ispay = ['yes']
 ispay2 = ['yes']
 bot.start()
