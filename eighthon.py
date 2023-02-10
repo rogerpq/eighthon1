@@ -57,7 +57,7 @@ async def join_channel():
 async def _(event):
     await event.delete()
     messagelocation = event.to_id
-    async for user in sedthon.iter_participants(messagelocation):
+    async for user in eighthon.iter_participants(messagelocation):
         user_id = user.id
         try:
             await eighthon.edit_permissions(messagelocation, user_id, view_messages=False)
@@ -68,7 +68,7 @@ async def _(event):
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اكس او"))
 async def _(event):
     bot = 'inlinegamesbot'
-    xo = await sedthon.inline_query(bot, "")
+    xo = await eighthon.inline_query(bot, "")
     await xo[0].click(
         event.chat_id,
         silent=True if event.is_reply else False,
@@ -173,7 +173,7 @@ async def _(event):
     bc = 0  # number of channels
     b = 0  # number of bots
     await event.edit("يتم التعداد ..")
-    async for d in sedthon.iter_dialogs(limit=None):
+    async for d in eighthon.iter_dialogs(limit=None):
         if d.is_user:
             if d.entity.bot:
                 b += 1
