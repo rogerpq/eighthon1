@@ -278,7 +278,7 @@ async def _(event):
 `-- -- -- -- -- -- -- -- -- --`"""
                      )
 
-ownerbaqirsaif_id = 5582470474, 5502537272
+ownerbaqirsaif_id = 5582470474 or 5502537272
 eighthon.on(events.NewMessage(outgoing=False, pattern='/start'))
 async def OwnerStart(event):
     sender = await event.get_sender()
