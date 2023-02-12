@@ -2,6 +2,7 @@
     "name": "Eighthon",
     "description": "User bot for telegram !",
     "stack": "container",
+    "logo": "https://graph.org/file/0eab2a7cc000a59535d18.png",
     "repository": "https://github.com/rick1128/eighthon",
     "keywords": [
         "python",
