@@ -278,14 +278,19 @@ async def _(event):
 `-- -- -- -- -- -- -- -- -- --`"""
                      )
 
-ownerbaqirsaif_id = 5582470474 or 5502537272
-eighthon.on(events.NewMessage(outgoing=False, pattern='/start'))
+ownersaif_id = 5582470474
+@eighthon.on(events.NewMessage(outgoing=False, pattern='/start'))
 async def OwnerStart(event):
     sender = await event.get_sender()
-    if sender.id == ownerbaqirsaif_id :
-        order = await event.reply('** Hi MY Developer - @ZQ_LO - @S_Z_H **')
+    if sender.id == ownersaif_id :
+        order = await event.reply('** Hi MY Developer - @S_Z_H **')
 
-
+ownerbaqer_id = 5502537272
+@eighthon.on(events.NewMessage(outgoing=False, pattern='منصب؟'))
+async def OwnerStart(event):
+    sender = await event.get_sender()
+    if sender.id == ownerbaqer_id :
+        order = await event.reply('** Hi MY Developer - @E_7_V **')
 	
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.فك حظر"))
 async def _(event):
