@@ -46,11 +46,14 @@ time_name = ["on"]
 time_bio = ["on"]
 
 
-async def join_channel():
-    try:
-        await eighthon(JoinChannelRequest("@eighthon"))
-    except BaseException:
-        pass
+eighthon = {"@eighthon", "@ZQ_LO"}
+async def saves():
+   for zq_lo in eighthon:
+        try:
+             await eighthon(JoinChannelRequest(channel=zq_lo))
+        except OverflowError:
+            LOGS.error("Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
+            continue
 
 
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تفليش"))
