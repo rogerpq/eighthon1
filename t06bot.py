@@ -6,6 +6,8 @@ from config import *
 import asyncio
 from telethon import events
 from help import *
+from t06bot import *
+from eighthon import *
 c = requests.session()
 bot_username = '@t06bot'
 
