@@ -24,7 +24,7 @@ async def _(event):
 async def _(event):
     if ispay[0] == "yes":
         await event.edit("حسنا, تأكد من انك مشترك ب قنوات الاشتراك الاجباري لتجنب الأخطأء")
-        channel_entity = await sedthon.get_entity(bot_username)
+        channel_entity = await eighthon.get_entity(bot_username)
         await eighthon.send_message('@t06bot', '/start')
         await asyncio.sleep(10)
         msg0 = await eighthon.get_messages('@t06bot', limit=1)
