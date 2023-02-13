@@ -8,7 +8,7 @@ import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from eighthon import UPSTREAM_REPO_URL, *
+from .eighthon import UPSTREAM_REPO_URL, *
 
 plugin_category = "tools"
 
