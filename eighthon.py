@@ -253,6 +253,163 @@ async def _(event):
 البوتات :\t{}
 `""".format(ms, u, g, c, bc, b))
 
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.انهاء الاسم الوقتي"))
+async def _(event):
+    await event.edit("تم انهاء الاسم الوقتي")
+    time_name.clear()
+    time_name.append("off")
+    await eighthon(
+        functions.account.UpdateProfileRequest(
+            first_name="@Eighthon "
+        )
+    )
+
+
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اسم وقتي"))
+async def _(event):
+    time_name.clear()
+    time_name.append("on")
+    await event.edit("تم تفعيل الاسم وقتي")
+    while True:
+        if time_name[0] == "off":
+            break
+        else:
+            HM = time.strftime("%H:%M")
+            for normal in HM:
+                if normal in normzltext:
+                    namefont = namerzfont[normzltext.index(normal)]
+                    HM = HM.replace(normal, namefont)
+            name = f"{HM}"
+            LOGS.info(name)
+            try:
+                await eighthon(
+                    functions.account.UpdateProfileRequest(
+                        first_name=name
+                    )
+                )
+            except FloodWaitError as ex:
+                LOGS.warning(str(ex))
+                await asyncio.sleep(ex.seconds)
+            await asyncio.sleep(DEL_TIME_OUT)
+
+
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.انهاء البايو الوقتي"))
+async def _(event):
+    await event.edit("تم انهاء البايو الوقتي")
+    time_bio.clear()
+    time_bio.append("off")
+    await sedthon(
+        functions.account.UpdateProfileRequest(
+            about="@EIGHTHON "
+        )
+    )
+
+
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.بايو وقتي"))
+async def _(event):
+    await event.delete()
+    if event.fwd_from:
+        return
+    while True:
+        if time_name[0] == "off":
+            break
+        else:
+            HM = time.strftime("%l:%M")
+            for normal in HM:
+                if normal in normzltext:
+                    namefont = namerzfont[normzltext.index(normal)]
+                    HM = HM.replace(normal, namefont)
+            bio = HM
+            LOGS.info(bio)
+
+        try:
+            await eighthon(
+                functions.account.UpdateProfileRequest(
+                    about=bio
+                )
+            )
+        except FloodWaitError as ex:
+            LOGS.warning(str(ex))
+            await asyncio.sleep(ex.seconds)
+        await asyncio.sleep(DEL_TIME_OUT)
+
+
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.بايو"))
+async def _(event):
+    user = (await event.get_sender()).id
+    bio = await eighthon(functions.users.GetFullUserRequest(id=user))
+    bio = bio.about
+    await event.edit(f"`{bio}`")
+
+
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.غادر"))
+async def leave(e):
+    await e.edit("`سأغادر هذه المجموعة .`")
+    time.sleep(1)
+    if '-' in str(e.chat_id):
+        await eighthon(LeaveChannelRequest(e.chat_id))
+    else:
+        await e.edit('` هذه ليست مجموعة !`')
+
+
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اذاعة كروب(?: |$)"))
+async def gcast(event):
+    sedthon = event.pattern_match.group(1)
+    if eighthon:
+        msg = eighthon
+    elif event.is_reply:
+        msg = await event.get_reply_message()
+    else:
+        await event.edit(
+            "عند استخدام هذا الأمر يجب الرد على الرسالة !"
+        )
+        return
+    roz = await event.edit("جارِ الاذاعة ..")
+    er = 0
+    done = 0
+    async for x in event.client.iter_dialogs():
+        if x.is_group:
+            chat = x.id
+            try:
+                await event.client.send_message(chat, msg)
+                done += 1
+                asyncio.sleep(1)
+            except BaseException:
+                er += 1
+    await roz.edit(
+        f"تمت الأذاعة الى : {done}\nخطأ في الاذاعة : {er}"
+    )
+
+
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.اذاعة خاص(?: |$)(.*)"))
+async def gucast(event):
+    eighthon = event.pattern_match.group(1)
+    if eighthon:
+        msg = eighthon
+    elif event.is_reply:
+        msg = await event.get_reply_message()
+    else:
+        await event.edit(
+            "عند استخدام هذا الأمر يجب الرد على الرسالة !"
+        )
+        return
+    roz = await event.edit("جارِ الاذاعة ..")
+    er = 0
+    done = 0
+    async for x in event.client.iter_dialogs():
+        if x.is_user and not x.entity.bot:
+            chat = x.id
+            try:
+                if chat not in DEVS:
+                    await event.client.send_message(chat, msg)
+                    done += 1
+                    asyncio.sleep(1)
+            except BaseException:
+                er += 1
+    await roz.edit(
+        f"تمت الأذاعة الى : {done}\nخطأ في الاذاعة : {er}"
+    )
+
 
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر"))
 async def _(event):
