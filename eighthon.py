@@ -252,7 +252,13 @@ async def _(event):
 القنوات :\t{}
 البوتات :\t{}
 `""".format(ms, u, g, c, bc, b))
-
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.المطور"))
+async def _(event):
+    photo = await eighthon.get_profile_photos(DEVS[0])
+    await sedthon.send_file(event.chat_id, photo, caption=f'''
+    The best !
+      - @S_Z_H , @E_7_V
+''', reply_to=event)
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.انهاء الاسم الوقتي"))
 async def _(event):
     await event.edit("تم انهاء الاسم الوقتي")
