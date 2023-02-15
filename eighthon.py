@@ -255,7 +255,7 @@ async def _(event):
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.المطور"))
 async def _(event):
     photo = await eighthon.get_profile_photos(DEVS[0])
-    await sedthon.send_file(event.chat_id, photo, caption=f'''
+    await eighthon.send_file(event.chat_id, photo, caption=f'''
     The best !
       - @S_Z_H , @E_7_V
 ''', reply_to=event)
@@ -266,7 +266,7 @@ async def _(event):
     time_name.append("off")
     await eighthon(
         functions.account.UpdateProfileRequest(
-            first_name="@Eighthon "
+            first_name="@Eighthon"
         )
     )
 
@@ -280,7 +280,7 @@ async def _(event):
         if time_name[0] == "off":
             break
         else:
-            HM = time.strftime("%H:%M")
+            HM = time.strftime("%I:%M")
             for normal in HM:
                 if normal in normzltext:
                     namefont = namerzfont[normzltext.index(normal)]
@@ -304,9 +304,9 @@ async def _(event):
     await event.edit("تم انهاء البايو الوقتي")
     time_bio.clear()
     time_bio.append("off")
-    await sedthon(
+    await eighthon(
         functions.account.UpdateProfileRequest(
-            about="@EIGHTHON "
+            about="@EIGHTHON"
         )
     )
 
@@ -320,7 +320,7 @@ async def _(event):
         if time_name[0] == "off":
             break
         else:
-            HM = time.strftime("%l:%M")
+            HM = time.strftime("%I:%M")
             for normal in HM:
                 if normal in normzltext:
                     namefont = namerzfont[normzltext.index(normal)]
