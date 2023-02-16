@@ -22,7 +22,7 @@ services:
         sync: false
       - key: BOT_USERNAME
         sync: false
-      - key: BOT_TOKEN
+      - key: TOKEN
         sync: false
       - key: PYTHON_VERSION
         value: 3.10.5 
