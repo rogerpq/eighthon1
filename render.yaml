@@ -12,7 +12,7 @@ services:
     startCommand: gunicorn app:app & python3 eighthon.py
     region: frankfurt
     repo: https://github.com/rick1128/eighthon     
-    branch: 313
+    branch: master
     envVars:
       - key: API_ID 
         sync: false
