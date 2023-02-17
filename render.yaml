@@ -9,7 +9,7 @@ services:
     name: eighthon
     env: python
     buildCommand: pip install -U -r requirements.txt
-    startCommand: gunicorn app:app & python3 -m eighthon.py
+    startCommand: gunicorn app:app
     region: frankfurt
     repo: https://github.com/rick1128/eighthon     
     branch: master
