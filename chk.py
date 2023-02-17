@@ -1,4 +1,4 @@
-# by: t.me/Dar4k  ~ t.me/R0R77
+#hunt
 
 import asyncio
 import random
@@ -101,7 +101,7 @@ def gen_user(choice):
     return username
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\الصيد")
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.types")
 async def _(event):
     await event.edit(
         """
@@ -111,11 +111,11 @@ async def _(event):
 
 النوع :(  سداسي حرفين/ ثلاثيات/ سداسيات/ بوتات/ خماسي حرفين/خماسي /سباعيات )
 
-الامر:  `.صيد` + النوع
+الامر:  `.hunt` + النوع
 - يقوم بصيد معرفات عشوائية حسب النوع
 
 ٴ— — — — — — — — — —
-الامر:   `.حالة الصيد`
+الامر:   `.hunting`
 • لمعرفة عدد المحاولات للصيد
 
 @eighthon
@@ -124,7 +124,7 @@ async def _(event):
     )
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\صيد (.*)")
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunt")
 async def hunterusername(event):
     msg = event.text.split()
     choice = str(msg[1])
@@ -186,7 +186,7 @@ async def hunterusername(event):
                 else:
                     await eighthon.send_message(
                         event.chat_id,
-                        f"""- خطأ مع @{username} , الخطأ :{str(eee)}""",
+                        f"""-Error with @{username} ,Error :{str(eee)}""",
                     )
                     break
         else:
@@ -194,15 +194,15 @@ async def hunterusername(event):
         trys[0] += 1
     isclaim.clear()
     isclaim.append("off")
-    await event.client.send_message(event.chat_id, "**- تم بنجاح الانتهاء من الصيد**")
+    await event.client.send_message(event.chat_id, "**hunting has been successfully completed**")
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\حالة الصيد")
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunting")
 async def _(event):
     if "on" in isclaim:
-        await event.edit(f"**- الصيد وصل لـ({trys[0]}) **من المحاولات")
+        await event.edit(f"**The hunting has arrived ({trys[0]}) of attempts **")
     elif "off" in isclaim:
-        await event.edit("**- الصيد بالاصل لا يعمل .**")
+        await event.edit("**The hunt is not Working**")
     else:
         await event.edit("- لقد حدث خطأ ما وتوقف الامر لديك")
 
