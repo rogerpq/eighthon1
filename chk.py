@@ -195,7 +195,7 @@ async def hunterusername(event):
     await event.client.send_message(event.chat_id, "**hunting has been successfully completed**")
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunting")
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunting"))
 async def _(event):
     if "on" in isclaim:
         await event.edit(f"**The hunting has arrived ({trys[0]}) of attempts **")
