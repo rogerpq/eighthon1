@@ -1,20 +1,10 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs18
-RUN apt-get update -y && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get install -y --no-install-recommends mediainfo \
-    && apt-get install -y --no-install-recommends p7zip-full \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-RUN pip3 install pillow \
-    google_trans_new \
-    googletrans==4.0.0rc1
-RUN apt-get update \
-    && apt-get install -y unzip wget
-COPY . /app/
-WORKDIR /app/
-COPY app.py app.py
-EXPOSE 5000
-RUN chmod +x /app/start
-RUN pip3 install --upgrade pip
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-CMD ["python3", "eighthon.py"]
+FROM python:3.8-slim-buster
+
+ WORKDIR /app
+
+ COPY requirements.txt requirements.txt
+ RUN pip3 install -r requirements.txt
+
+ COPY . .
+
+ CMD [ "python3", "eighthon.py"]
