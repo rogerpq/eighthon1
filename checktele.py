@@ -262,7 +262,7 @@ def gen_user(choice):
         f = [c[0], d[0], c[0], d[0], d[0], c[0], c[0], d[0], c[0], d[0]]
         random.shuffle(f)
         username = "".join(f)
-       else:
+      else:
             pass
     return username
 
