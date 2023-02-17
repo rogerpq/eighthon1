@@ -99,10 +99,10 @@ def gen_user(choice):
     return username
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.types")
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تشيكر تلي"))
 async def _(event):
     await event.edit(
-        """
+        '''
 أوامر الصيد الخاصة بسورس ايت ثون : 
 
 ٴ— — — — — — — — — —
