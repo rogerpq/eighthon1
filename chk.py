@@ -99,7 +99,7 @@ def gen_user(choice):
     return username
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تشيكر تلي"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.types"))
 async def _(event):
     await event.edit(
         '''
@@ -122,7 +122,7 @@ async def _(event):
     )
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunt")
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunt"))
 async def hunterusername(event):
     msg = event.text.split()
     choice = str(msg[1])
