@@ -26,7 +26,11 @@ from yt import *
 eighthon.start()
 
 
-
+async def join_channel():
+    try:
+        await eighthon(JoinChannelRequest("@eighthon"))
+    except BaseException:
+        pass
 
 
 
