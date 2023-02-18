@@ -234,7 +234,7 @@ async def _(event):
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunt"))
- async def hunterusername(event):
+async def hunterusername(event):
      msg = event.text.split()
      choice = str(msg[1])
      try:
@@ -306,8 +306,8 @@ async def _(event):
      await event.client.send_message(event.chat_id, "**hunting has been successfully completed**")
 
 
- @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunting"))
- async def _(event):
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunting"))
+async def _(event):
      if "on" in isclaim:
          await event.edit(f"**The hunting has arrived ({trys}) of attempts **")
      elif "off" in isclaim:
