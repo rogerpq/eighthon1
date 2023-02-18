@@ -9,4 +9,3 @@ pytube
 youtube-search
 sqlalchemy
 asyncio
-yt_dlp
