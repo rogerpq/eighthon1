@@ -8,6 +8,11 @@ import telethon
 from telethon.sync import functions
 from user_agent import generate_user_agent
 from help import *
+import requests
+from user_agent import *
+from help import *
+from config import *
+from threading import Thread
 
 a = 'qwertyuiopassdfghjklzxcvbnm'
 b = '1234567890'
@@ -255,7 +260,7 @@ async def _(event):
                 )
                 break
             except Exception as eee:
-                await jmub.send_message(
+                await eighthon.send_message(
                     event.chat_id,
                     f"""خطأ مع {username} , الخطأ :{str(eee)}""",
                 )
