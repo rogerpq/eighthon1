@@ -1,4 +1,4 @@
-# by: t.me/Dar4k  ~ t.me/Eighthon
+# by:  ~ t.me/Eighthon
 
 import random
 import requests
