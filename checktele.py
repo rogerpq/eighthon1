@@ -140,7 +140,7 @@ async def _(event):
     )
 
 
-eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد"))
 async def hunterusername(event):
     msg = event.text.split()
     choice = str(msg[1])
