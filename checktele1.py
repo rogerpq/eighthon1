@@ -1,9 +1,8 @@
-# by: t.me/Dar4k  ~ t.me/eighthon
+# by: t.me/Dar4k  ~ t.me/Eighthon
 
-import asyncio
 import random
-
 import requests
+
 import telethon
 from telethon.sync import functions
 from user_agent import generate_user_agent
@@ -13,6 +12,9 @@ from user_agent import *
 from help import *
 from config import *
 from threading import Thread
+import threading
+import asyncio
+from telethon import events
 
 a = 'qwertyuiopassdfghjklzxcvbnm'
 b = '1234567890'
