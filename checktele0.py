@@ -233,91 +233,10 @@ async def _(event):
     else:
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunt"))
-async def hunterusername(event):
-     msg = event.text.split()
-     choice = str(msg[1])
-     try:
-         ch = str(msg[2])
-         if "@" in ch:
-             ch = ch.replace("@", "")
-         await event.edit(f"حسناً سيتم بدء الصيد في @{ch} .")
-     except:
-         try:
-             ch = await eighthon(
-                 functions.channels.CreateChannelRequest(
-                     title="eighthon|@S_Z_H|@E_7_v",
-                     about="This channel to hunt username by - @eighthon ",
-                 )
-             )
-             ch = ch.updates[1].channel_id
-             await event.edit(f"**Ok i will check the username**")
-         except Exception as e:
-             await eighthon.send_message(
-                 event.chat_id, f"Error with create channel , Error**-  : {str(e)}**"
-             )
-     isclaim.clear()
-     isclaim.append("on")
-     for i in range(19000000):
-         username = gen_user(choice)
-         if username == "error":
-             await event.edit("**- يرجى وضع النوع بشكل صحيح**.")
-             break
-         isav = check_user(username)
-         if isav == True:
-             try:
-                 await eighthon(
-                     functions.channels.UpdateUsernameRequest(
-                         channel=ch, username=username
-                     )
-                 )
-                 await event.client.send_message(
-                     event.chat_id,
-                     f"- Done : @{username} !\n- By : @S_Z_H , @E_7_V - @eighthon !\n- Hunting Log {trys2[0]}",
-                 )
-                 break
-             except telethon.errors.rpcerrorlist.UsernameInvalidError:
-                 pass
-             except Exception as baned:
-                 if "(caused by UpdateUsernameRequest)" in str(baned):
-                     pass
-             except telethon.errors.FloodError as e:
-                 await eighthon.send_message(
-                     event.chat_id,
-                     f"للاسف تبندت , مدة الباند**-  ({e.seconds}) ثانية .**",
-                     event.chat_id,
-                     f"للاسف تبندت , مدة الباند**-  ({e.seconds}) ثانية .**",
-                 )
-                 break
-             except Exception as eee:
-                 if "the username is already" in str(eee):
-                     pass
-                 else:
-                     await eighthon.send_message(
-                         event.chat_id,
-                         f"""-Error with @{username} ,Error :{str(eee)}""",
-                     )
-                     break
-         else:
-             pass
-         trys[0] += 1
-     isclaim.clear()
-     isclaim.append("off")
-     await event.client.send_message(event.chat_id, "**hunting has been successfully completed**")
-
-
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunting"))
-async def _(event):
-     if "on" in isclaim:
-         await event.edit(f"**The hunting has arrived ({trys}) of attempts **")
-     elif "off" in isclaim:
-         await event.edit("**The hunt is not Working**")
-     else:
-         await event.edit("- لقد حدث خطأ ما وتوقف الامر لديك")
 # كلايم عدد نوع قناة
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد (.*)"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.كلايم (.*)"))
 async def _(event):
     if ispay2[0] == "yes":
         isclaim.clear()
@@ -328,13 +247,13 @@ async def _(event):
         trys = 0
         await event.edit(f"حسناً سأفحص نوع `{choice}` من اليوزرات على `{ch}` , بعدد `{msg[0]}` من المحاولات !")
 
-        @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الصيد"))
+        @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الكلايم"))
         async def _(event):
             if ispay2[0] == "yes":
                 if "on" in isclaim:
                     await event.edit(f"الصيد وصل لـ({trys}) من المحاولات")
                 elif "off" in isclaim:
-                    await event.edit("لايوجد صيد شغال !")
+                    await event.edit("لايوجد كلايم شغال !")
                 else:
                     await event.edit("خطأ")
             else:
