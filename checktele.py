@@ -1,4 +1,4 @@
-# by:  ~ t.me/Eighthon
+# by: t.me/Eighthon
 
 import random
 import requests
@@ -168,7 +168,7 @@ async def hunterusername(event):
                 )
             )
             ch = ch.updates[1].channel_id
-            await event.edit(f"**حسناً سأبدي الفحص**")
+            await event.edit(f"**حسناً سأفحص نوع `{choice}`**")
         except Exception as e:
             await eighthon.send_message(
                 event.chat_id, f"خطأ في انشاء القناة , الخطأ**-  : {str(e)}**"
@@ -178,7 +178,7 @@ async def hunterusername(event):
     for i in range(19000000):
         username = gen_user(choice)
         if username == "error":
-            await event.edit("**- يرجى وضع النوع بشكل صحيح**.")
+            await event.edit("** يرجى وضع النوع بشكل صحيح**.")
             break
         isav = check_user(username)
         if isav == True:
@@ -290,7 +290,7 @@ async def _(event):
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الصيد"))
 async def _(event):
     if "on" in isclaim:
-        await event.edit(f"**- الصيد وصل لـ({trys[0]}) **من المحاولات")
+        await event.edit(f"** الصيد وصل لـ({trys[0]}) **من المحاولات")
     elif "off" in isclaim:
         await event.edit("**- الصيد بالاصل لا يعمل .**")
     else:
