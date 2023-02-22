@@ -37,9 +37,7 @@
             "required": true
     }
   },
-    "addons": [{
-    "plan": "heroku-mongodb",
-    "options": {
-      "version": "12"
+    "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
      }
     }
