@@ -290,9 +290,9 @@ async def _(event):
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الصيد"))
 async def _(event):
     if "on" in isclaim:
-        await event.edit(f"** الصيد وصل لـ({trys[0]}) **من المحاولات")
+        await event.edit(f"** الصيد وصل لـ({trys[0]}) من المحاولات**")
     elif "off" in isclaim:
-        await event.edit("**- الصيد بالاصل لا يعمل .**")
+        await event.edit("** الصيد  لا يعمل .**")
     else:
         await event.edit("- لقد حدث خطأ ما وتوقف الامر لديك")
 
