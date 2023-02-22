@@ -149,6 +149,12 @@ async def _(event):
 '''
     )
 
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.الانواع"))
+async def _(event):
+    if ispay2[0] == "yes":
+        await event.edit(tele_checker2)
+    else:
+        await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد"))
 async def hunterusername(event):
