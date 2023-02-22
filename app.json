@@ -35,6 +35,6 @@
             "description": "يوزر البوت بدون ـ@ـ",
             "value": "",
             "required": true
-      }
+        }
     }
-   }
+}
