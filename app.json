@@ -35,14 +35,11 @@
             "description": "يوزر البوت بدون ـ@ـ",
             "value": "",
             "required": true
+      }
      },
-     {
-      "plan": "mongolab:shared-single-small",
-      "as": "MONGO"
-    },
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "9.5"
+        "version": "12"
       }
     }
