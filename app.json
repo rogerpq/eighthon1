@@ -35,6 +35,10 @@
             "description": "يوزر البوت بدون ـ@ـ",
             "value": "",
             "required": true
+      }
+    "addons": [{
+    "plan": "heroku-mongodb",
+    "options": {
+      "version": "12" 
         }
     }
-}
