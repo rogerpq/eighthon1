@@ -40,9 +40,9 @@
     "plan": "mongolab:shared-single-small",
       "as": "MONGO"
     },
-    }
+    {
       "plan": "heroku-postgresql",
       "options": {
         "version": "12"
      }
-    }
+  }
