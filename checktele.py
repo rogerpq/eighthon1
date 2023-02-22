@@ -168,7 +168,7 @@ async def hunterusername(event):
                 )
             )
             ch = ch.updates[1].channel_id
-            await event.edit(f"**حسناً سأفحص نوع `{choice}`**")
+            await event.edit(f"**حسناً سأفحص نوع {choice}**")
         except Exception as e:
             await eighthon.send_message(
                 event.chat_id, f"خطأ في انشاء القناة , الخطأ**-  : {str(e)}**"
