@@ -40,5 +40,3 @@
     "plan": "heroku-mongodb",
     "options": {
       "version": "12"
-     }
-    }
