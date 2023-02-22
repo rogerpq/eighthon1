@@ -307,7 +307,7 @@ async def _(event):
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تثبيت (.*)"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.ت (.*)"))
 async def _(event):
     if ispay2[0] == "yes":
         trys = 0
