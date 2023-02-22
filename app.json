@@ -36,10 +36,5 @@
             "value": "",
             "required": true
       }
-     }
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "12"
-      }
     }
+   }
