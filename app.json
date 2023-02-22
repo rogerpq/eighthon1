@@ -35,9 +35,8 @@
             "description": "يوزر البوت بدون ـ@ـ",
             "value": "",
             "required": true
-    }
-  },
+     }
+    },
     "plan": "mongolab:shared-single-small",
       "as": "MONGO"
      }
-    }
