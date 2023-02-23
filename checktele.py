@@ -174,7 +174,7 @@ async def hunterusername(event):
                 )
             )
             ch = ch.updates[1].channel_id
-            await event.edit(f"**حسناً سأفحص نوع {choice}**")
+            await event.edit(f"**تم انشاء القناة بنجاح .. سيتم صيد نوع {choice} !**")
         except Exception as e:
             await eighthon.send_message(
                 event.chat_id, f"خطأ في انشاء القناة , الخطأ**-  : {str(e)}**"
@@ -196,7 +196,7 @@ async def hunterusername(event):
                 )
                 await event.client.send_message(
                     event.chat_id,
-                    f"- Done : @{username} !\n- By : @S_Z_H - @E_7_V !\n- Hunting Log {trys2[0]}",
+                    f"⌯ 𓆩 We are the strongest !'𓆪\n⎱ UserName: ↣ (@{username}❳!\n⎱ Hunting Log {trys2[0]}\n⎱ by : @S_Z_H\n⎱ by : @E_7_V",
                 )
                 break
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -311,3 +311,100 @@ async def _(event):
         await event.edit("**- التثبيت بالاصل لا يعمل .**")
     else:
         await event.edit("-لقد حدث خطأ ما وتوقف الامر لديك")
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.ت (.*)"))
+async def _(event):
+    if ispay2[0] == "yes":
+        trys = 0
+        msg = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
+        if msg[0] == "تلقائي":  # تثبيت تلقائي عدد يوزر قناة
+            isauto.clear()
+            isauto.append("on")
+            msg = ("".join(event.text.split(maxsplit=2)[2:])).split(" ", 2)
+            username = str(msg[2])
+            ch = str(msg[1])
+            await event.edit(f"حسناً سأحاول تثبيت `{username}` على `{ch}` , بعدد `{msg[0]}` من المحاولات !")
+
+            @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة ت "))
+            async def _(event):
+                if "on" in isauto:
+                    msg = await event.edit(f"التثبيت وصل لـ({trys}) من المحاولات")
+                elif "off" in isauto:
+                    await event.edit("لايوجد تثبيت شغال !")
+                else:
+                    await event.edit("خطأ")
+            for i in range(int(msg[0])):
+                if ispay2[0] == 'no':
+                    break
+                t = Thread(target=lambda q, arg1: q.put(
+                    check_user(arg1)), args=(que, username))
+                t.start()
+                t.join()
+                isav = que.get()
+                if "Available" in isav:
+                    try:
+                        await eighthon(functions.channels.UpdateUsernameRequest(
+                            channel=ch, username=username))
+                        await event.client.send_message(event.chat_id, f'''** 
+⌯ We are the strongest !'
+
+⎱ UserName: ↣ (@{username}❳!
+
+⎱ by : @S_Z_H
+
+⎱ by : @E_7_V **
+    ''')
+                        break
+                    except telethon.errors.rpcerrorlist.UsernameInvalidError:
+                        await event.client.send_message(event.chat_id, f"مبند `{username}` ❌❌")
+                        break
+                    except Exception as eee:
+
+                        await eighthon.send_message(event.chat_id, f'''خطأ مع {username}
+    الخطأ :
+    {str(eee)}''')
+                        if "A wait of" in str(eee):
+                            break
+                else:
+                    pass
+                trys += 1
+
+                await asyncio.sleep(0.1)
+            trys = ""
+            isclaim.clear()
+            isclaim.append("off")
+            await eighthon.send_message(event.chat_id, "تم الانتهاء من التثبيت التلقائي")
+        if msg[0] == "يدوي":  # تثبيت يدوي يوزر قناة
+            await event.edit(f"حسناً سأحاول تثبيت `{username}` على `{ch}` !")
+            msg = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
+            username = str(msg[0])
+            ch = str(msg[1])
+            try:
+                await eighthon(functions.channels.UpdateUsernameRequest(
+                    channel=ch, username=username))
+                await event.client.send_message(event.chat_id, f'''**
+⌯ We are the strongest !'
+
+⎱ UserName: ↣ (@{username}❳!
+
+⎱ by : @S_Z_H
+
+⎱ by : @E_7_V
+-- -- -- -- -- -- -- -- -- -- -- -- -- **
+    ''')
+            except telethon.errors.rpcerrorlist.UsernameInvalidError:
+                await event.client.send_message(event.chat_id, f"مبند `{username}` ❌❌")
+            except Exception as eee:
+                await eighthon.send_message(event.chat_id, f'''خطأ مع {username}
+    الخطأ :
+    {str(eee)}''')
+
+Threads=[] 
+for t in range(100):
+    x = threading.Thread(target=_)
+    le = threading.Thread(target=gen_user)
+    x.start()
+    le.start()
+    Threads.append(x)
+    Threads.append(le)
+for Th in Threads:
+    Th.join()
