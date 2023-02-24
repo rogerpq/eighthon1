@@ -103,7 +103,7 @@ def gen_user(choice):
     elif choice == "تيست":
         c = d = random.choices(a)
         d = random.choices(b)
-        f = [c[0], c[0], d[0], c[0], c[0], d[0], c[0], d[0]]
+        f = [c[0], c[0], c[0]]
         random.shuffle(f)
         username = "".join(f)
     else:
@@ -159,9 +159,9 @@ async def _(event):
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد"))
 async def hunterusername(event):
     msg = event.text.split()
-    choice = str(msg[1])
+    choice = str(msg[1,2])
     try:
-        ch = str(msg[2])
+        ch = str(msg[3])
         if "@" in ch:
             ch = ch.replace("@", "")
         await event.edit(f"حسناً سيتم بدء الصيد في @{ch} .")
