@@ -159,9 +159,9 @@ async def _(event):
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.صيد"))
 async def hunterusername(event):
     msg = event.text.split()
-    choice = str(msg[1,2])
+    choice = str(msg[1])
     try:
-        ch = str(msg[3])
+        ch = str(msg[2])
         if "@" in ch:
             ch = ch.replace("@", "")
         await event.edit(f"حسناً سيتم بدء الصيد في @{ch} .")
