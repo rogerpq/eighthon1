@@ -236,7 +236,7 @@ async def _(event):
 # كلايم عدد نوع قناة
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.كلايم (.*)"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunt(.*)"))
 async def _(event):
     if ispay2[0] == "yes":
         isclaim.clear()
@@ -245,15 +245,15 @@ async def _(event):
         ch = str(msg[2])
         choice = str(msg[1])
         trys = 0
-        await event.edit(f"حسناً سأفحص نوع `{choice}` من اليوزرات على `{ch}` , بعدد `{msg[0]}` من المحاولات !")
+        await event.edit(f"**Ok i will check `{choice}` from the users on `{ch}` , by num `{msg[0]}` of attempts!**")
 
-        @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.حالة الكلايم"))
+        @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.hunting"))
         async def _(event):
             if ispay2[0] == "yes":
                 if "on" in isclaim:
-                    await event.edit(f"الصيد وصل لـ({trys}) من المحاولات")
+                    await event.edit(f"** The hunting has arrived ({trys}) of attempts**")
                 elif "off" in isclaim:
-                    await event.edit("لايوجد كلايم شغال !")
+                    await event.edit("The Check not working ")
                 else:
                     await event.edit("خطأ")
             else:
@@ -288,13 +288,13 @@ async def _(event):
                     with open("banned.txt", "a") as f:
                         f.write(f"\n{username}")
                 except Exception as eee:
-                    await eighthon.send_message(event.chat_id, f'''خطأ مع {username}
+                    await eighthon.send_message(event.chat_id, f'''Error With {username}
     الخطأ :
     {str(eee)}''')
                     if "A wait of" in str(eee):
                         break
                     else:
-                        await eighthon.send_message(event.chat.id, "سأستمر بلفحص !")
+                        await eighthon.send_message(event.chat.id, "** I will keep checking !**")
             else:
                 pass
             trys += 1
@@ -302,12 +302,12 @@ async def _(event):
         isclaim.clear()
         isclaim.append("off")
         trys = ""
-        await event.client.send_message(event.chat_id, "تم الانتهاء من الفحص")
+        await event.client.send_message(event.chat_id, "**The checking is completed**")
     else:
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
 
-@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.ت (.*)"))
+@eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.t(.*)"))
 async def _(event):
     if ispay2[0] == "yes":
         trys = 0
