@@ -253,7 +253,7 @@ async def _(event):
     isauto.append("on")
     username = str(msg[1])
 
-    for i in range(100):
+    for i in range(1000000000):
         isav = check_user(username)
         if isav == True:
             try:
