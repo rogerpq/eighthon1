@@ -101,10 +101,10 @@ def gen_user(choice):
         random.shuffle(f)
         username = "".join(f)
     elif choice == "تيست":
-        c = d = random.choices(a)
+        c = random.choices(a)
         d = random.choices(b)
-        f = [c[0], c[0], c[0]]
-        random.shuffle(f)
+        s = random.choices(e)
+        f = [c[0], d[0], s[0]]
         username = "".join(f)
     else:
         return "error"
@@ -181,7 +181,7 @@ async def hunterusername(event):
             )
     isclaim.clear()
     isclaim.append("on")
-    for i in range(19000000):
+    for i in range(190000):
         username = gen_user(choice)
         if username == "error":
             await event.edit("** يرجى وضع النوع بشكل صحيح**.")
@@ -239,12 +239,12 @@ async def _(event):
         try:
             ch = await eighthon(
                 functions.channels.CreateChannelRequest(
-                    title="EIGHTHON HUNTER - صيد ايت ثون",
+                    title="EIGHTHON HUNTER",
                     about="This channel to hunt username by - @eighthon ",
                 )
             )
             ch = ch.updates[1].channel_id
-            await event.edit(f"**- تم بنجاح بدأ التثبيت**")
+            await event.edit(f"** تم بنجاح بدأ التثبيت**")
         except Exception as e:
             await eighthon.send_message(
                 event.chat_id, f"خطأ في انشاء القناة , الخطأ : {str(e)}"
@@ -253,7 +253,7 @@ async def _(event):
     isauto.append("on")
     username = str(msg[1])
 
-    for i in range(1000000000000):
+    for i in range(100):
         isav = check_user(username)
         if isav == True:
             try:
@@ -264,7 +264,7 @@ async def _(event):
                 )
                 await event.client.send_message(
                     event.chat_id,
-                    f"- Done : @{username} !\n- By : @S_Z_H - @E_7_V !\n- Hunting Log {trys2[0]}",
+                    f"**⌯ 𓆩 We are the strongest !'𓆪\n\n⎱ UserName: ↣ (@{username}❳!\n\n⎱ Hunting Log {trys2[0]}\n\n⎱ by : @S_Z_H\n\n⎱ by : @E_7_V**",
                 )
                 break
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
