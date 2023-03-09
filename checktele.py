@@ -181,7 +181,7 @@ async def hunterusername(event):
             )
     isclaim.clear()
     isclaim.append("on")
-    for i in range(190000):
+    for i in range(190000000):
         username = gen_user(choice)
         if username == "error":
             await event.edit("** يرجى وضع النوع بشكل صحيح**.")
