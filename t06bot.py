@@ -8,7 +8,7 @@ from telethon import events
 from help import *
 from t06bot import *
 c = requests.session()
-bot_username = '@t06bot'
+bot_username = '@zmmbot'
 
 
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.بوت المليار"))
@@ -24,12 +24,12 @@ async def _(event):
     if ispay[0] == "yes":
         await event.edit("حسنا, تأكد من انك مشترك ب قنوات الاشتراك الاجباري لتجنب الأخطأء")
         channel_entity = await eighthon.get_entity(bot_username)
-        await eighthon.send_message('@t06bot', '/start')
+        await eighthon.send_message('@zmmbot', '/start')
         await asyncio.sleep(10)
-        msg0 = await eighthon.get_messages('@t06bot', limit=1)
+        msg0 = await eighthon.get_messages('@zmmbot', limit=1)
         await msg0[0].click(2)
         await asyncio.sleep(10)
-        msg1 = await eighthon.get_messages('@t06bot', limit=1)
+        msg1 = await eighthon.get_messages('@zmmbot', limit=1)
         await msg1[0].click(0)
 
         chs = 1
@@ -51,7 +51,7 @@ async def _(event):
                 except:
                     bott = url.split('/')[-1]
                     await eighthon(ImportChatInviteRequest(bott))
-                msg2 = await eighthon.get_messages('@t06bot', limit=1)
+                msg2 = await eighthon.get_messages('@zmmbot', limit=1)
                 await msg2[0].click(text='تحقق')
                 chs += 1
                 await eighthon.send_message(event.chat_id, f"تم الاشتراك في {chs} قناة")
