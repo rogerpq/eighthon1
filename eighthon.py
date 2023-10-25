@@ -1,4 +1,3 @@
-from aiohttp import web
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions
 from hijri_converter import Gregorian
@@ -25,10 +24,6 @@ from yt import *
 # -
 
 print("تم اشتغل روح جمع وصيد")
-app = web.AppRunner(await web_server())
-    await app.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, Config.PORT).start()
 eighthon.start()
     
 
