@@ -542,4 +542,4 @@ app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(app, bind_address, Config.PORT).start()
-eighthon.run_until_disconnected()
+eighthon.run_until_complete(startup_process())
