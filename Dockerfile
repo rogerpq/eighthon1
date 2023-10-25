@@ -7,4 +7,4 @@ FROM python:3.8-slim-buster
 
  COPY app.py app.py 
 
- CMD [ "python3", "eighthon.py"]
+ CMD ["python3", "eighthon.py"]
