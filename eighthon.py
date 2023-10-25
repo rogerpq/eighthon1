@@ -24,12 +24,12 @@ from yt import *
 
 # -
 
+eighthon.start()
 app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(app, bind_address, Config.PORT).start()
-eighthon.start()
-
+    
 
 async def join_channel():
     try:
