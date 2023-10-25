@@ -537,4 +537,4 @@ async def update(event):
 
 
 print("- سورس ايت ثون يعمل بنجــاح ..")
-eighthon.run_until_complete(startup_process())
+eighthon.run_until_disconnected(startup_process())
