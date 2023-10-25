@@ -9,3 +9,4 @@ pytube
 youtube-search
 sqlalchemy
 asyncio
+aiohttp
