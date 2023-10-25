@@ -24,12 +24,8 @@ from yt import *
 
 # -
 
-eighthon.start()
 print("تم اشتغل روح جمع وصيد")
-app = web.AppRunner(await web_server())
-    await app.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, Config.PORT).start()
+eighthon.start()
     
 
 async def join_channel():
@@ -542,4 +538,8 @@ async def update(event):
 
 
 print("- سورس ايت ثون يعمل بنجــاح ..")
+app = web.AppRunner(await web_server())
+    await app.setup()
+    bind_address = "0.0.0.0"
+    await web.TCPSite(app, bind_address, Config.PORT).start()
 eighthon.run_until_disconnected()
