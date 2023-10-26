@@ -10,3 +10,5 @@ youtube-search
 sqlalchemy
 asyncio
 aiohttp
+flask
+Flask==2.2.5
