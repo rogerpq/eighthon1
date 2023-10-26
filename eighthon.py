@@ -23,9 +23,8 @@ from yt import *
 
 # -
 
-print("تم اشتغل روح جمع وصيد")
 eighthon.start()
-    
+
 
 async def join_channel():
     try:
@@ -537,4 +536,4 @@ async def update(event):
 
 
 print("- سورس ايت ثون يعمل بنجــاح ..")
-eighthon.run_until_disconnected(startup_process())
+eighthon.run_until_disconnected()
